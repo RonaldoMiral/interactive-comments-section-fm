@@ -1,0 +1,64 @@
+.add-comments-container {
+  background-color: $nt-white;
+  padding: toRem(16);
+  border-radius: toRem(10);
+  display: grid;
+  gap: toRem(16);
+
+  textarea {
+    border: 1px solid $nt-lt-gray;
+    border-radius: toRem(10);
+    padding: toRem(16) toRem(20);
+    height: toRem(94);
+    font-family: inherit;
+    overflow-y: hidden;
+    color: $nt-gy-blue;
+    resize: none;
+
+    &:focus {
+      outline: 1px solid $pr-lt-gy-blue;
+    }
+  }
+
+  .user-send_button-container {
+    @include flex(space-between, center);
+
+    img {
+      @include dim(32, 32);
+    }
+
+    button {
+      border: 0;
+      @include dim(104, 48);
+      border-radius: toRem(8);
+      text-transform: uppercase;
+      font-weight: $ft-wt-700;
+      background-color: $pr-md-blue;
+      font-family: inherit;
+      color: $nt-white;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .add-comments-container {
+    padding: toRem(23) toRem(144) toRem(23) toRem(80);
+    position: relative;
+
+    .user-send_button-container {
+      img {
+        @include dim(40, 40);
+        position: absolute;
+        left: toRem(23);
+        top: toRem(23);
+      }
+
+      button {
+        position: absolute;
+        top: toRem(23);
+        right: toRem(23);
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+// ### Primary
+
+$pr-md-blue: hsl(238, 40%, 52%);
+$pr-st-red: hsl(358, 79%, 66%);
+$pr-lt-gy-blue: hsl(239, 57%, 85%);
+$pr-pl-red: hsl(357, 100%, 86%);
+
+// ### Neutral
+
+$nt-dk-blue: hsl(212, 24%, 26%);
+$nt-gy-blue: hsl(211, 10%, 45%);
+$nt-lt-gray: hsl(223, 19%, 93%);
+$nt-vy-lt-gray: hsl(228, 33%, 97%);
+$nt-white: hsl(0, 0%, 100%);
+
+// Weights
+$ft-wt-400: 400;
+$ft-wt-500: 500;
+$ft-wt-700: 700;
+
+// mixins
+@mixin dim($width, $height) {
+  width: toRem($width);
+  height: toRem($height);
+}
+
+@mixin flex($hl, $vl) {
+  display: flex;
+  align-items: $vl;
+  justify-content: $hl;
+}
+
+// Functions
+@function toRem($value) {
+  @return ($value / 16) + rem;
+}

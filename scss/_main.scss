@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Rubik;
+  background-color: $nt-lt-gray;
+  padding: toRem(16);
+  color: $nt-gy-blue;
+}
+
+main {
+  min-height: 100vh;
+}
+
+@media (min-width: 800px) {
+  main {
+    @include flex(default, center);
+    flex-direction: column;
+    padding: toRem(64) 0;
+  }
+
+  main > * {
+    width: toRem(730);
+  }
+}

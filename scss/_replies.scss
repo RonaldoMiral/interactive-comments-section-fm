@@ -1,0 +1,10 @@
+.replies-container {
+  padding-left: toRem(16);
+  margin-top: toRem(16);
+  border-left: 1px solid $pr-lt-gy-blue;
+
+  .comment-container,
+  .add-comments-container {
+    margin-top: toRem(16);
+  }
+}

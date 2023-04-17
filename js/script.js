@@ -5,7 +5,7 @@ import { handleAddCommentContainer } from './handleAddCommentContainerClick.js';
 
 const main = async () => {
   // Vai buscar os dados no arquivo data.json
-  const returnedData = await fetch('http://127.0.0.1:5500/data.json');
+  const returnedData = await fetch('https://github.com/RonaldoMiral/interactive-comments-section-fm/blob/main/data.json');
 
   // O a conversão do retorn em um objeto javaScript
   const data = await returnedData.json();

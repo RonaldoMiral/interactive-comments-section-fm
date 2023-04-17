@@ -32,8 +32,9 @@ export function commentModel(
             <img
               src="./images/icon-reply.svg"
               alt="Reply comment"
+              class="reply" data-reply
             />
-            <strong data-reply>Reply</strong>
+            <strong class="reply" data-reply>Reply</strong>
           </div>
         </div>  
       </div>

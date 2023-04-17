@@ -1,6 +1,7 @@
 import displayComments from './displayComments.js';
 import { replyCommentModel } from './adicionarResponderComentario.js';
 import { actions } from './actons.js';
+import { handleAddCommentContainer } from './handleAddCommentContainerClick.js';
 
 const main = async () => {
   // Vai buscar os dados no arquivo data.json
@@ -18,6 +19,10 @@ const main = async () => {
 
   // A função responsável por gerenciar as acções que podemos realizar em um comentário
   actions(user);
+
+  // Lida com todos os eventos que ocorrem no container de adição de respostas
+  const addCommentContainer = document.querySelector('[data-add]');
+  addCommentContainer.addEventListener('click', (e) => handleAddCommentContainer(e));
 };
 
 main();

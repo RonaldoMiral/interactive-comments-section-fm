@@ -30,11 +30,34 @@ export const actions = (user) => {
 
   // Adiciona o evento click ao super container
   comentsContainer.addEventListener('click', (event) => {
-    // Seleciona o container do comentário em que o botão foi clicado
-    const commentContainer = event.target.closest('.parent-container');
-    // Seleciona o container que agrupa todas as respostas
-    const repliesContainer = commentContainer.querySelector('[data-replies]');
+    const clickedElement = event.target;
+    // Seleciona o container do comentário em que o botão foi clicado junto com as respostas
+    const commentContainer = clickedElement.closest('.comment-container');
+    // Verifica se o elemento clicado e um botão de responder, se for executas as acções
+    if (clickedElement.classList.contains('reply')) {
+      // Seleciona um campo de resposta dentro do container dos comentários(super container);
+      const exists = comentsContainer.querySelector('[data-add]');
+      // Verifica se existe um campo de resposta dentro do super, se existir remove-o
+      if (exists) exists.remove();
+      // Seleciona o container do comentário em que o botão foi clicado sem afetar as respostas
+      const commentContainerSuper = clickedElement.closest('.parent-container');
+      // Seleciona o container que agrupa todas as respostas
+      const repliesContainer =
+        commentContainerSuper.querySelector('[data-replies]');
 
-    repliesContainer.innerHTML += replyCommentModel(user);
+      // Pega o username do comentário a ser respondido
+      const username =
+        commentContainer.querySelector('[data-username]').textContent;
+
+      // Adiciona um campo de comentários no container de respostas
+      repliesContainer.innerHTML += replyCommentModel(user, username);
+    }
+
+    // Certifica de que o botão clicado foi um de adicionar, se for pega o text area mais próximo
+    if(clickedElement.classList.contains('add-button')) {
+      const textArea = commentContainer.querySelector('[data-text-area]');
+      console.log(textArea.value);
+    }
+
   });
 };

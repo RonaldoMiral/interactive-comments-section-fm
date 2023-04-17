@@ -143,8 +143,17 @@ main {
   color: hsl(211, 10%, 45%);
   resize: none;
 }
+.add-comments-container textarea::-moz-placeholder {
+  visibility: visible;
+}
+.add-comments-container textarea::placeholder {
+  visibility: visible;
+}
 .add-comments-container textarea:focus {
   outline: 1px solid hsl(239, 57%, 85%);
+}
+.add-comments-container textarea b {
+  color: red;
 }
 .add-comments-container .user-send_button-container {
   display: flex;

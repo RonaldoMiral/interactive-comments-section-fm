@@ -15,8 +15,16 @@
     color: $nt-gy-blue;
     resize: none;
 
+    &::placeholder {
+      visibility: visible;
+    }
+
     &:focus {
       outline: 1px solid $pr-lt-gy-blue;
+    }
+
+    b {
+      color: red;
     }
   }
 
